@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="robots" content="index, follow"> <!-- Para que los robots de los buscadores indexen mi página -->
+   <meta name="theme-color" content="#fafafa"> <!-- Para que el navegador sepa que color de tema usar -->
+
+   <meta name="description" content="Mi portfolio de FrontEnd Developer">
+   <!-- Para que los buscadores sepan de que trata mi página y la muestren en el buscador -->
+
+   <!-- Open Graph -->
+   <meta property="og:title" content="Mi portfolio de FrontEnd Developer">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://ezestom.github.io/">
+   <meta property="og:image" content="./img/total-eclipse-of-the-octocat.jpg">
+
+   <link rel="alternate" href="https://ezestom.github.io/en" hreflang="es-GB" />
+   <!-- Para que los buscadores sepan que idioma usar en mi página -->
+   <link rel="canonical" href="https://ezestom.github.io/">
+   <!-- Para que los buscadores sepan que esta es la página principal -->
+
+
+   <link rel="icon" type="image/jpg" href="./img/total-eclipse-of-the-octocat.jpg">
+   <!-- Para que el navegador sepa que imagen usar como favicon -->
+
+   <title>Reforzando mi HTML 💻</title>
+
+   <style>
+      body {
+         background-color: #fbfbfb;
+         font-family: Arial, Helvetica, sans-serif;
+         color: #333;
+      }
+   </style>
+</head>
+<!-- Aquí el Body -->
+
+<body>
+   <header>
+      <h1>Portfolio @ezestom</h1>
+      <p>+2 años como <strong>Desarrollador FrontEnd</strong> en Digital House </p>
+
+      <nav>
+         <a href="#experiencia">Experiencia</a>
+         <a href="#formacion">Formación</a>
+         <a href="#tecnologia">Mis technologias</a>
+         <a href="https//github.com/ezestom" target="_blank" rel="noreferrer">GitHub</a>
+         <!--rel="noreferrer" sirve para seguridad -->
+      </nav>
+   </header>
+   <main>
+      <video controls width="500" muted loop src="./video/Only Cars - Google Chrome 2023-09-21 19-08-46.mp4">
+      </video>
+      <!--los atributos de video son : muted loop controls autoplay etc -->
+
+      <audio controls src="./audio/estoy-cansado-jefe.mp3"></audio>
+
+      <iframe style="width: 100%; aspect-ratio: 16/9; border-radius: 8px;"
+         src="https://www.youtube.com/embed/T2zrjLRcsTE?si=VSeg_C5s2Ps5-6nZ" title="YouTube video player"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+         allowfullscreen></iframe>
+
+
+      <h2 id="experiencia">Experiencia</h2>
+      <ul>
+         <li class="list-item">
+            Adevinta - 2022
+         </li>
+         <li class="list-item">
+            Adevinta - 2021
+         </li>
+      </ul>
+      <a download href="./img/total-eclipse-of-the-octocat.jpg">
+         <img id="photo-image" width="200" height="200" src="./img/total-eclipse-of-the-octocat.jpg"
+            title="Foto de GitHub" alt="Imagen del gato hermoso de Github, con una estrella por detrás">
+      </a>
+      <!-- con el atributo download podemos descargar cualquier recurso que tengamos en nuestro dominio -->
+
+      <dialog id="dialog">
+         <h1>Veamos cómo funciona</h1>
+         <p>Este es un dialogo</p>
+         <button id="close-dialog">Cerrar</button>
+      </dialog>
+      <button id="open-dialog">Abrir dialogo</button>
+
+      <script>
+         const openDialog = document.getElementById('open-dialog');
+         const closeDialog = document.getElementById('close-dialog');
+         const dialog = document.getElementById('dialog');
+
+         openDialog.addEventListener('click', () => {
+            dialog.showModal();
+         });
+
+         closeDialog.addEventListener('click', () => {
+            dialog.close();
+         });
+      </script>
+
+
+
+      <aside>
+         <header>
+            <h2 id="formacion">Formación</h2>
+         </header>
+         <ol type="I" reversed>
+            <li class="list-item">
+               Digital House - 2020
+            </li>
+            <li class="list-item">
+               Digital House - 2019
+            </li>
+            <li class="list-item">
+               Digital House - 2018
+            </li>
+            <li class="list-item">
+               Digital House - 2017
+            </li>
+         </ol>
+      </aside>
+
+      <section>
+         <article>
+            <h4>Mis Links</h4>
+            <img style="width: 100%; " loading="lazy" src="./img/Screenshot 2023-03-03 143602.png"
+               alt="Captura de la imagen de mi web de links" title="captura de la web">
+            <!-- loadin="lazy" sirve para ir descargando las imagenes al scrollear -->
+         </article>
+      </section>
+
+      <section>
+         <h2>Preguntas frecuentes</h2>
+
+         <details open>
+            <summary>Qué estudios tienes?</summary>
+            <p>Estudié en Digital House</p>
+         </details>
+         <details>
+            <summary>Qué tecnologías manejas?</summary>
+            <p>Manejo HTML, CSS, JavaScript, React, Node</p>
+         </details>
+         <details>
+            <summary>Qué lenguajes hablas?</summary>
+            <p>Hablo español, inglés y portugués</p>
+         </details>
+         <details>
+            <summary>Qué hobbies tienes?</summary>
+            <p>Me gusta jugar al fútbol y al tenis</p>
+         </details>
+      </section>
+
+
+      <section>
+         <article id="tecnologia">
+            <header>
+               <h3> Mis tecnologías <span>favoritas</span></h3>
+            </header>
+            <ol type="A" reversed>
+               <li value="10">HTML</li>
+               <li>CSS</li>
+               <li>JavaScript</li>
+               <li>React</li>
+               <li>Node</li>
+            </ol>
+         </article>
+      </section>
+
+      <section>
+         <form method="post" action="/">
+            <fieldset>
+               <legend>
+                  Información personal
+               </legend>
+
+               <div>
+                  <label for="name">Nombre:</label>
+                  <input type="text" name="name" id="name" placeholder="Ezequiel Stom" required>
+               </div>
+
+               <div>
+                  <label for="email">Email:</label>
+                  <input type="text" name="email" id="email" placeholder="ezequielstom@gmail.com" required>
+               </div>
+            </fieldset>
+            <fieldset>
+               <legend>
+                  Información adicional
+               </legend>
+
+               <div>
+                  <label for="subject">telefono:</label>
+                  <input type="tel" name="tel" id="tel" placeholder="+12345678" pattern="[0-9] {9}" required>
+               </div>
+            </fieldset>
+            <fieldset>
+               <legend>Otros</legend>
+
+               <div>
+                  <label for="why"> Por qué quieres contactar?</label>
+                  <select name="why" id="why">
+                     <option value="1">Trabajo</option>
+                     <option value="2">Proyecto</option>
+                     <option value="3">Otro</option>
+                  </select>
+               </div>
+
+               <div>
+                  <label for="terms">Aceptas los términos?</label>
+                  <input type="checkbox" name="termns" id="termns" checked required>
+               </div>
+
+               <div>
+                  <datalist id="languajes">
+                     <option value="JavaScript"></option>
+                     <option value="Python"></option>
+                     <option value="Java"></option>
+                     <option value="C#"></option>
+                     <option value="C++"></option>
+                  </datalist>
+                  <label for="">Con qué lenguaje te sientes más cómodo?</label>
+                  <input list="languajes" name="languajes" id="">
+               </div>
+
+            </fieldset>
+
+            <input type="submit" value="Enviar contacto">
+         </form>
+      </section>
+
+   </main>
+   <footer>
+      <p>Hecho con ❤️ por @ezestom</p>
+      <a href="mailto:ezequielstom@gmail.com"> Enviame un correo</a>
+      <a href="tel:+5491168641122">Llamar por teléfono</a>
+
+   </footer>
+
+</body>
+
+</html>

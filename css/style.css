@@ -2,23 +2,123 @@ h1 {
 	/* color: rgba(81, 81, 170, .8); es legacy */
 	color: rgba(238, 11, 11, 0.8);
 	border: solid 2px #09f;
-   padding: 10px;
-   text-align: center;
+	padding: 10px;
+	text-align: center;
 }
 
 body {
 	background: #f2f2f2;
 }
-a{
-   color: #09f;
-   text-decoration: none;
-   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+a {
+	color: #09f;
+	text-decoration: none;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		sans-serif;
 }
 .search {
-   padding: 2rem;
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   background-color: #fbfbfb;
-   border: 1px solid #cccc;
+	padding: 2rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	background-color: #fbfbfb;
+	border: 1px solid #cccc;
+}
+
+/* slider  */
+
+section {
+	timeline-scope: --carousel;
+}
+
+.markers li:nth-child(1) {
+	--i: 1;
+}
+
+.markers li:nth-child(2) {
+	--i: 2;
+}
+
+.markers li:nth-child(3) {
+	--i: 3;
+}
+
+.markers li:nth-child(4) {
+	--i: 4;
+}
+
+.slider {
+	scroll-timeline: --carousel x;
+	display: flex;
+	flex-direction: row;
+	border-radius: 4px;
+	width: 600px;
+	aspect-ratio: 16/9;
+
+	scroll-snap-type: x mandatory;
+	overscroll-behavior: contain;
+	scroll-behavior: smooth;
+
+	overflow-x: scroll;
+	overflow-y: hidden;
+
+	box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.1);
+}
+
+.markers a {
+	display: block;
+	width: 16px;
+	aspect-ratio: 1;
+	background: white;
+	opacity: 0.7;
+	border-radius: 50%;
+
+	animation: activate linear;
+	animation-timeline: --carousel;
+	animation-range: calc((var(--i) - 1) * 25%) calc(var(--i) * 25% + 1px);
+}
+
+@keyframes activate {
+	0%,
+	100% {
+		background: #09f;
+		opacity: 1;
+	}
+}
+
+.slider a {
+	flex: 0 0 100%;
+	width: 100%;
+	scroll-snap-align: center;
+}
+
+.slider img {
+	object-fit: cover;
+	width: 100%;
+}
+
+.markers {
+	display: flex;
+	flex-direction: row;
+	gap: 0.25em;
+	list-style: none;
+	font-size: 2em;
+	position: absolute;
+	bottom: 5rem;
+	left: 50%;
+	translate: -50% 0;
+}
+.markers > li {
+	list-style: none;
+	display: inline;
+}
+
+.slider-container {
+	margin: 0;
+	display: grid;
+	place-content: center;
+	height: 50vh;
+	background: #222;
+	width: 100%;
+   position: relative;
 }
